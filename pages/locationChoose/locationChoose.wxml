@@ -1,0 +1,160 @@
+<!--locationChoose.wxml f4f8fa-->
+<view>
+  <scroll-view scroll-into-view="{{target}}" scroll-with-animation='true'>
+    <!--服务流程-->
+    <view id="workFlow">
+      <view class='process'>
+        <view class="pro-item">
+          <image class='item-img' src="../../public/image/sport{{choose_page===1?'_g':'_h'}}.png"></image>
+          <text class="item-text{{choose_page===1?'l':'h'}}">身体部位</text>
+        </view>
+
+        <view class="pro-arrow" style='right:10rpx;'></view>
+        <view class="pro-item">
+          <image class='item-img' src="../../public/image/strength{{choose_page===2?'_g':'_h'}}.png"></image>
+          <text class="item-text{{choose_page===2?'l':'h'}}">强度</text>
+        </view>
+
+        <view class="pro-arrow"></view>
+        <view class="pro-item">
+          <image class='item-img' src="../../public/image/quality{{choose_page===3?'_g':'_h'}}.png"></image>
+          <text class="item-text{{choose_page===3?'l':'h'}}">急慢性</text>
+        </view>
+
+        <view class="pro-arrow"></view>
+        <view class="pro-item">
+          <image class='item-img' style='width:80rpx;' src="../../public/image/posture{{choose_page===4?'_g':'_h'}}.png"></image>
+          <text class="item-text{{choose_page===4?'l':'h'}}">姿势复现</text>
+        </view>
+
+
+        <view class="pro-arrow"></view>
+        <view class="pro-item">
+          <image class='item-img' src="../../public/image/report_h.png"></image>
+          <text class='item-texth'>初步报告</text>
+        </view>
+        <view class="pro-arrow"></view>
+        <view class="pro-item">
+          <image class='item-img' src="../../public/image/test_h.png"></image>
+          <text class='item-texth'>检查</text>
+        </view>
+      </view>
+    </view>
+
+    <!--身体部位-->
+    <view class="pro-detail" wx:if="{{choose_page==1}}">
+      <view class="pro-detail-content" style="align-items:center">
+        <view class="pro-content-title" style="margin-top:5%;">受损的部位</view>
+        <view class="pro-content-choose">
+          <view class="choose-item" style='padding-top:8%;padding-bottom:8%;' bindtap="choose" data-name="location" data-value='肩部' data-choose_page='1'>
+            <image src="../../public/image/shoulder{{formdata.location=='肩部'?'_g':''}}.png" class='choose-img' data-location='肩部'></image>
+            <view data-location='肩部' class='{{formdata.location=="肩部"?"color-green;choose-text":"choose-text"}}'>肩部</view>
+          </view>
+          <view class="choose-item" style='padding-top:8%;padding-bottom:8%;' bindtap="choose" data-name="location" data-value='肘部' data-choose_page='1'>
+            <image data-location='肘部' src="../../public/image/elbow{{formdata.location=='肘部'?'_g':''}}.png" class='choose-img'></image>
+            <view data-location='肘部' class='{{formdata.location=="肘部"?"color-green;choose-text":"choose-text"}}'>肘部</view>
+          </view>
+          <view class="choose-item" style='padding-top:8%;padding-bottom:8%;' bindtap="choose" data-name="location" data-value='膝部' data-choose_page='1'>
+            <image data-location='膝部' src="../../public/image/knee{{formdata.location=='膝部'?'_g':''}}.png" class='choose-img'></image>
+            <view data-location='膝部' class='{{formdata.location=="膝部"?"color-green;choose-text":"choose-text"}}'>膝部</view>
+          </view>
+          <view class="choose-item" style='padding-top:8%;padding-bottom:8%;' bindtap="choose" data-name="location" data-value='踝部' data-choose_page='1'>
+            <image data-location='踝部' src="../../public/image/ankle{{formdata.location=='踝部'?'_g':''}}.png" class='choose-img'></image>
+            <view data-location='踝部' class='{{formdata.location=="踝部"?"color-green;choose-text":"choose-text"}}'>踝部</view>
+          </view>
+        </view>
+      </view>
+      <view class="next-btns" style='margin-top:5%'>
+        <view class="next-btn" bindtap="next">下一步</view>
+      </view>
+    </view>
+    <!--受损强度-->
+    <view wx:if="{{choose_page==2}}" class="pro-detail">
+      <view class="pro-detail-content" style="align-items:center">
+        <view class="pro-content-title" style='margin-top:5%'>运动受损时的强度</view>
+        <view class="pro-content-choose">
+          <view class="choose-item" style="padding-top:22%;padding-bottom:22%" bindtap="choose" data-name="strength" data-value='高强度' data-choose_page='2'>
+            <image data-strength='高强度' src="../../public/image/high{{formdata.strength=='高强度'?'_g':''}}.png" class="choose-img"></image>
+            <text style="color:{{formdata.strength=='高强度'?'#2fcabb':'#ccc'}}">高强度</text>
+            <image data-strength='高强度' src="../../public/image/q{{formdata.strength=='高强度'?'_g':''}}.png" class="choose-img"></image>
+          </view>
+
+          <view class="choose-item" style="padding-top:22%;padding-bottom:22%" bindtap="choose" data-name="strength" data-value='低强度' data-choose_page='2'>
+            <image data-strength='低强度' src="../../public/image/low{{formdata.strength=='低强度'?'_g':''}}.png" class="choose-img"></image>
+            <text style="color:{{formdata.strength=='低强度'?'#2fcabb':'#ccc'}}">低强度</text>
+            <image data-strength='低强度' src="../../public/image/q{{formdata.strength=='低强度'?'_g':''}}.png" style="height: 40rpx;width: 40rpx; margin-right: 10rpx;"></image>
+          </view>
+
+        </view>
+      </view>
+
+      <view class='next-btns' style='margin-top:5%;margin-bottom:5%;'>
+        <view class='next-btn' bindtap='next'>下一步</view>
+      </view>
+
+      <view class="next-btns">
+        <view class="next-btn" bindtap="last" style='background:#F0F0F0;color:#C0C0C0'>上一步</view>
+      </view>
+
+    </view>
+    <!--急慢性-->
+    <view wx:if="{{choose_page==3}}" class="pro-detail">
+      <view class="pro-detail-content" style="align-items:center">
+        <view class="pro-content-title" style='margin-top:5%'>损伤的性质</view>
+        <view class="pro-content-choose">
+          <view class="choose-item" style="padding-top:22%;padding-bottom:22%" bindtap="choose" data-name="quality" data-value='急性' data-choose_page='3'>
+            <image data-quality='急性' src="../../public/image/acute{{formdata.quality=='急性'?'_g':''}}.png" style="height: 40rpx;width: 40rpx;margin-right: 20rpx;"></image>
+            <text style="color:{{formdata.quality=='急性'?'#2fcabb':'#ccc'}}">急性</text>
+            <image data-quality='急性' src="../../public/image/q{{formdata.quality=='急性'?'_g':''}}.png" style="height: 40rpx;width: 40rpx;margin-right: 20rpx;"></image>
+          </view>
+
+          <view class="choose-item" style="padding-top:22%;padding-bottom:22%" bindtap="choose" data-name="quality" data-value='慢性' data-choose_page='3'>
+            <image data-quality='慢性' src="../../public/image/chronic{{formdata.quality=='慢性'?'_g':''}}.png" style="height: 40rpx;width: 40rpx; margin-right: 20rpx;"></image>
+            <text style="color:{{formdata.quality=='慢性'?'#2fcabb':'#ccc'}}">慢性</text>
+            <image data-quality='慢性' src="../../public/image/q{{formdata.quality=='慢性'?'_g':''}}.png" style="height: 40rpx;width: 40rpx; margin-right: 20rpx;"></image>
+          </view>
+
+        </view>
+      </view>
+
+      <view class='next-btns' style='margin-top:5%;margin-bottom:5%;'>
+        <view class='next-btn' bindtap='next'>下一步</view>
+      </view>
+      <view class="next-btns">
+        <view class="next-btn" style='background:#f0f0f0;color:#c0c0c0' bindtap="last">上一步</view>
+      </view>
+
+    </view>
+    <!--姿势复现-->
+    <view wx:if="{{choose_page==4}}" class="pro-detail">
+      <view class="pro-detail-content" style='width:80%;height:75%;background-color:white;margin-left:10%;margin-top:5%;'>
+        <view class="pro-content-title" style="margin-bottom:20rpx;">损伤时的姿势
+          <view style="align-self:center;font-size:30rpx;margin-top: -50rpx; margin-bottom: 10rpx;">（注：点击图片查看大图）</view>
+        </view>
+        <swiper current="{{currentTap}}" class="swiper-class" style='margin-top:-7%' indicator-dots="{{items.length!==1?true:false}}" bindchange="swiper">
+          <block wx:for="{{items}}" class="pro-choose-block" wx:key="this">
+            <swiper-item class="posture-choose-item">
+              <view class='show{{item.pics.length}}'>
+                <block wx:for="{{item.pics}}" style='width:50%' wx:for-item="pic">
+                  <image id="{{item.id}}" data-current="{{index+1}}" bindtap="previewImage" src="{{pic}}" class='imgclass{{item.pics.length}}'></image>
+                </block>
+              </view>
+              <view name="testss">
+                <view class="note_item_text">{{item.abstract}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <block wx:if="{{items.length!==1?true:false}}">
+          <image class="leftArrow" bindtap="leftArrowClicked" src="/public/image/arrow_left@2x.png" style='margin-left:-10%;'></image>
+          <image class="rightArrow" bindtap="rightArrowClicked" src="/public/image/arrow_right@2x.png" style='margin-right:-10%;'></image>
+        </block>
+      </view>
+
+      <view class="button_class" style='margin-top:5%;'>
+        <view class="last-button" bindtap="last">上一步</view>
+        <view class="next-button" bindtap="tosmallReport">生成初步报告</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

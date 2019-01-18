@@ -1,0 +1,41 @@
+<!--pages/USER/userListInfo.wxml-->
+<view style='height:100%;width:100%'>
+<view class="avatar">
+    <view class="avatar_image">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="avatar_text">
+      <open-data type="userNickName" style="font-size:40rpx"></open-data>
+    </view>
+  </view>
+  <view style='background-color:white;margin-top:25rpx;font-size:30rpx;font-weight:bold;'>
+    <view style='display:flex;'>
+    <view class='title'>您的性别：</view>
+    <view class='context'>{{sex}}</view>
+    </view>
+    <view style='display:flex;'>
+    <view class='title'>您的年龄：</view>
+    <view class='context'>{{age}}岁</view>
+    </view>
+    <view style='display:flex;'>
+    <view class='title'>您的身高：</view>
+    <view class='context'>{{height}}cm</view>
+    </view>
+    <view style='display:flex;'>
+    <view class='title'>您的体重：</view>
+    <view class='context'>{{weight}}kg</view>
+    </view>
+    <view style='display:flex;'>
+    <view class='title'>您经常做的运动：</view>
+    <view class='context'>{{sport}}</view>
+    </view>
+    <view style='display:flex;'>
+    <view class='title'>您运动后感觉如何：</view>
+    <view class='context'>{{frequency}}</view>
+    </view>  
+  </view>
+  <view style='margin-top:25rpx;display:flex;'>
+  <button class='button' bindtap='Back'>返回</button>
+  <button class='button' bindtap='Modify'>修改</button>
+  </view>
+</view>

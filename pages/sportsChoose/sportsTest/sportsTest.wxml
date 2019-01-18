@@ -1,0 +1,33 @@
+<!--pages/sportsChoose/sportsTest/sportsTest.wxml-->
+<view class='page'>
+  <view class='top'>
+    <text class='topText'>运动评估</text>
+  </view>
+  <view class='panel'>
+    <text class='text'>运动评估：{{sports}}</text>
+  </view>
+  <swiper current='{{currentPage}}' class='swiper' indicator-dots='true' bindchange='swiperChange'>
+    <block wx:for="{{steps}}" wx:key="*this">
+      <swiper-item>
+        <view style='display:flex;flex-direction:column;'>
+          <view style='margin-left:20rpx;margin-bottom:20rpx;font-size:30rpx;'>评估内容：{{item.content}}</view>
+          <view style='margin-left:20rpx;margin-bottom:20rpx;font-size:30rpx;'>步骤{{index+1}}</view>
+          <view style='margin-left:20rpx;margin-bottom:20rpx;font-size:30rpx;'>{{item.question}}</view>
+          <radio-group bindchange="radioChange" style='display:flex;flex-direction:column;margin-left:20rpx;font-size:30rpx;'>
+            <label class="radio" wx:for="{{item.choose_items}}" wx:key="*radio">
+              <radio value="{{item}}"/>{{item}}
+            </label>
+          </radio-group>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view wx:if="{{currentPage!=steps.length-1}}" style='display:flex;flex-direction:row'>
+    <button style='width:250rpx;height:100rpx;margin:30rpx 20rpx 0 60rpx;background:#2fcabb;color:#fff;border-radius:50rpx;' bindtap='last'>上一步</button>
+    <button style='width:250rpx;height:100rpx;margin:30rpx 20rpx 0 90rpx;background:#2fcabb;color:#fff;border-radius:50rpx;' bindtap='next'>下一步</button>
+</view>
+<view wx:if="{{currentPage==steps.length-1}}" style='display:flex;flex-direction:row'>
+    <button style='width:250rpx;height:100rpx;margin:30rpx 20rpx 0 60rpx;background:#2fcabb;color:#fff;border-radius:50rpx;' bindtap='last'>上一步</button>
+    <button style='width:250rpx;height:100rpx;margin:30rpx 20rpx 0 90rpx;background:#2fcabb;color:#fff;border-radius:50rpx;' bindtap='submit'>生成评估</button>
+</view>

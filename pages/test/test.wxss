@@ -1,0 +1,98 @@
+/* pages/test/test.wxss */
+
+.introduction_title{
+  flex: 1;
+  -webkit-flex:1;
+  font-size:30rpx;
+  font-weight: bold;
+  padding: 20rpx;
+}
+.introduction{
+  flex: 1;
+  -webkit-flex:1;
+  font-size:30rpx;
+  font-weight: bold;
+}
+.button{
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color:#00bba9;
+  border-radius: 90rpx;
+  color:#fff;
+  text-align: center;
+  width: 40%;
+  float: left;
+  margin-left:40rpx
+}
+.page_title{
+  color:#2fcabb;
+  font-size:40rpx;
+  padding: 10rpx 0rpx;
+  text-align: center;
+}
+.swiper-class0{
+  display:block;
+  height:740rpx;
+  padding-left:20rpx;
+}
+.swiper-class1{
+  display:block;
+  height:800rpx;
+  padding-left:20rpx;
+}
+.swiper-class2{
+  display:block;
+  height:1000rpx;
+  padding-left:20rpx;
+}
+.swiper-class3{
+  display:block;
+  height:1300rpx;
+  padding-left:20rpx;
+}
+.posture-choose-item{ 
+  display:flex;
+  flex-direction: column;
+}
+.next-button{
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color:#00bba9;
+  border-radius: 90rpx;
+  color:#fff;
+  text-align: center;
+  width: 40%;
+  float: left;
+  margin-left:80rpx;
+  font-size:35rpx;
+}
+.last-button{
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color:#00bba9;
+  border-radius: 90rpx;
+  color:#fff;
+  text-align: center;
+  width: 40%;
+  float: left;
+  margin-left:40rpx;
+  font-size:35rpx;
+}
+.leftArrow {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  left: 10rpx;
+  bottom: 33%;
+}
+.rightArrow {
+  width: 48rpx;
+  height: 48rpx;
+  right: 10rpx;
+  position: absolute;
+  bottom: 33%;
+}
+.page{
+  margin:5%;
+  background-color:white;
+}

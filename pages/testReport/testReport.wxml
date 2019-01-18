@@ -1,0 +1,49 @@
+<!--testReport.wxml-->
+<view class="page" style='margin-left:50rpx;margin-right:50rpx'>
+  <view class="page_title">{{disease_name}}检查报告</view>
+  <view class="introduction_title">您的检查结果如下：(可滑动)</view>
+  <view>
+    <scroll-view scroll-y style="height:400rpx;background-color:#FFFFFF;padding-left: 20rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <block wx:for="{{testReport}}" class="pro-choose-block" style="margin-top:30rpx;" wx:key="this">
+        <view class="posture-choose-item" style='font-size:30rpx;font-weight:bold;'>
+          <view wx:if="{{item.choose}}">{{index+1}}.症状：{{item.name}}
+            <view wx:if="{{item.result}}">注释：{{item.result}}</view>
+            <view wx:else>注释：无</view>
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{!checked}}" class="posture-choose-item" style='font-size:30rpx;font-weight:bold;'>组合结果：根据您的检查，您患有{{disease_name}}疾病的可能性小，但仍不能排除您患有其他疾病的可能性。</view>    
+
+    </scroll-view>
+    <view class="introduction_title" style='margin-top:50rpx;border-top:2rpx solid #efefef;'>
+      <view>建议您浏览以下词条进一步检查：</view>
+      <view style='font-size:30rpx;'>(左右滑动或点击箭头)</view>
+      <swiper current="{{currentTap}}" class="swiper-class" indicator-dots="true">
+        <block wx:for="{{diagnosis}}" class="pro-choose-block" wx:key="this">
+          <swiper-item class="posture-choose-item" style='font-size:30rpx'>
+            <view style='display: flex;margin-bottom:20rpx;'>
+              <view class="navigator_item" bindtap="toDisease" id="{{item.id}}">
+                {{item.name}}----
+              </view>
+              <view class="navigator_item" bindtap="toTest" id="{{item.id}}">
+                {{item.name}}检查方法
+              </view>
+            </view>
+            <image class='image' id="{{item.id}}" data-current="{{index+1}}" bindtap="previewImage" src="{{const_url}}{{item.main_pic}}" style="heigh:200rpx;align-self:center;" mode="aspectFit" />(注：请点击图片查看副图)
+            <label>
+              <view class="note_item_text" style='margin-bottom:50rpx;'>{{item.abstract}}</view>
+            </label>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view>
+      <image class="leftArrow" bindtap="leftArrowClicked" src="/public/image/arrow_left@2x.png"></image>
+      <image class="rightArrow" bindtap="rightArrowClicked" src="/public/image/arrow_right@2x.png"></image>
+    </view>
+  </view>
+  <view class="next-btns" style='padding:20rpx;'>
+    <view class="next-btn" bindtap="toSuggestion">直接查看医学意见</view>
+  </view>
+
+</view>

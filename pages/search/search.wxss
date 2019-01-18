@@ -1,0 +1,123 @@
+/* pages/search/search.wxss */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f8fa;
+}
+
+.searchContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  height: 88rpx;
+  padding-left: 24rpx;
+  border-bottom: 2rpx #ebebeb solid;
+}
+
+.searchIconInputContainer {
+  display: flex;
+  flex: 1;
+  height: 60rpx;
+  flex-direction: row;
+  background-color: #f4f4f4;
+  align-items: center;
+  padding-left: 24rpx;
+  border-radius: 6rpx;
+}
+
+.searchInput {
+  flex: 1;
+  margin: 14rpx 0;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}
+
+.tvSearch {
+  width: 56rpx;
+  font-size: 28rpx;
+  color: #888;
+  margin: 0 24rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: row;
+  height: 88rpx;
+  font-size: 24rpx;
+  color: #333;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  align-items: center;
+  border-bottom: 2rpx solid #ebebeb;
+}
+
+.item-name {
+  display: flex;
+  font-size: 26rpx;
+  color: #333;
+  flex: 4;
+  margin-left: 12rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.item-type-txt {
+  display: flex;
+  font-size: 24rpx;
+  color: #888;
+  margin-right: 12rpx;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.searchIcon {
+  display: block;
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 36rpx;
+  margin-right: 10rpx;
+  background-size: 26rpx 26rpx;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(https://m.elongstatic.com/static/xcxticket/search.png);
+}
+.text{
+  font-size: 36rpx;
+}
+.todayList:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.todayItem:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.todayItem {
+  width: 346rpx;
+  height: auto;
+  padding: 14rpx;
+  padding-bottom: 0;
+  margin-bottom: 15rpx;
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+  /* float:left;  */
+  display: inline-block;
+  margin-left: 18rpx;
+  border-radius: 50rpx;
+}
+
+.todayItem image {
+  width: 317rpx;
+  height: 292rpx;
+}

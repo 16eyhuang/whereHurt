@@ -1,0 +1,40 @@
+<!--pages/search/search.wxml-->
+<view class="main pl">
+  <!--搜索-->
+  <view class="searchContainer">
+    <view class="searchIconInputContainer">
+      <icon class="searchIcon mlr_search" />
+      <input class="searchInput" placeholder="请输入关键字" placeholder-class="placeholder" bindinput="inputBind" bindtap="inputTap" value="{{searchKey}}" />
+    </view>
+    <text class="tvSearch" bindtap="searchTap">搜索</text>
+  </view>
+  <!--关键词不空展示搜索结果'-->
+  <scroll-view wx:if="{{suggestDataList.length>0 }}" scroll-y="true" style="height:{{scrollHeight+43}}px">
+
+    <view wx:for="{{suggestDataList}}" wx:for-item="suggestItem" data-itemData="{{suggestItem}}" bindtap="goto">
+      <navigator url="../disease/disease?id={{suggestItem.id}}" class="itemContainer">
+        <text class="item-name">{{suggestItem.name}}</text>
+        <text class="item-type-txt">{{suggestItem.disease_name}}</text>
+      </navigator>
+    </view>
+  </scroll-view>
+  <view class="todayList">
+    <view class="text">(注：点击查看某部位的疾病列表)</view>
+    <view class="todayItem" bindtap='choose' data-name="肩部">
+      <image mode="aspectFit" src="/public/image/jian{{name==='肩部'?'_g':''}}.png" />
+      <text class="text" style="color:{{name==='肩部'?'#2fcabb':''}}">肩部</text>
+    </view>
+    <view class="todayItem" bindtap='choose' data-name="肘部">
+      <image mode="aspectFit" src="/public/image/zhou{{name==='肘部'?'_g':''}}.png" />
+      <text class="text" style="color:{{name==='肘部'?'#2fcabb':''}}">肘部</text>
+    </view>
+    <view class="todayItem" bindtap='choose' data-name="膝部">
+      <image mode="aspectFit" src="/public/image/xi{{name==='膝部'?'_g':''}}.png" />
+      <text class="text" style="color:{{name==='膝部'?'#2fcabb':''}}">膝部</text>
+    </view>
+    <view class="todayItem" bindtap='choose' data-name="踝部">
+      <image mode="aspectFit" src="/public/image/huai{{name==='踝部'?'_g':''}}.png" />
+      <text class="text" style="color:{{name==='踝部'?'#2fcabb':''}}">踝部</text>
+    </view>
+  </view>
+</view>

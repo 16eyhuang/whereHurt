@@ -1,0 +1,63 @@
+<!--pages/member/userinfo.wxml-->
+
+<view id="info">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="form-item" style="margin-top:40rpx;">
+      <view class="form-left">
+        <text>*</text>您的性别:</view>
+      <view class="form-right">
+        <radio-group class="radio-group" name="gender" bindchange="radioChange">
+          <label class="radio">
+            <radio value="0" />男
+          </label>
+          <label class="radio">
+            <radio value="1" />女
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <view class="form-item" style="margin-top:20rpx;">
+      <view class="form-left">
+        <text>*</text>您的年龄:</view>
+      <view class="form-right other-right">
+        <input name="age" type="text" class="input" />
+        <view class="input-text">岁</view>
+      </view>
+    </view>
+    <view class="form-item" style="margin-top:20rpx;">
+      <view class="form-left">
+        <text>*</text>您的身高:</view>
+      <view class="form-right other-right">
+        <input name="height" type="text" class="input" />
+        <view class="age-text">cm</view>
+      </view>
+    </view>
+    <view class="form-item" style="margin-top:20rpx;">
+      <view class="form-left">
+        <text>*</text>您的体重:</view>
+      <view class="form-right other-right">
+        <input name="weight" type="text" class="input" />
+        <view class="age-text">kg</view>
+      </view>
+    </view>
+
+    <view class="form-item" style="margin-top:20rpx;">
+      <view class="form-left">
+        <text>*</text>您经常做的运动:</view>
+      <view class="form-right other-right">
+        <input name="sport" type="text" class="age" placeholder="例如，篮球" />
+      </view>
+    </view>
+    <view class="form-item" style="margin-top:20rpx;">
+      <view class="form-left">
+        <text>*</text>您运动后感觉如何:</view>
+      <view class="form-right other-right">
+        <input name="frequency" type="text" class="input" placeholder=""/>
+      </view>
+    </view>
+    <view style='display:flex;'>
+    <button bindtap='Cancal' class='submit'>取消</button>
+    <button formType="submit" class="submit">提交信息</button>
+    </view>
+  </form>
+</view>

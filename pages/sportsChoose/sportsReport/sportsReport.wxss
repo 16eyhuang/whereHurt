@@ -1,0 +1,69 @@
+/* pages/sportsChoose/sportsReport/sportsReport.wxss */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  height: 100%;
+}
+.tagsPanel{
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+  height:auto;
+  margin-bottom:5%;
+  align-items:center;
+  justify-content: center;
+}
+.tags{
+  margin:20rpx 20rpx 0rpx 20rpx;
+  width:atuo;
+  height:auto;
+  padding:10rpx;
+  border:1rpx solid #2fcabb;
+  border-radius:30rpx;
+  text-align:center;
+  font-size:30rpx;
+  color:#2fcabb;
+  word-break:keep-all;
+  white-space:nowrap;
+}
+.iconPanel{
+  width:30%;
+  height:100%;
+}
+.bg_grey{
+  background: #f0f0f0;
+}
+.orange{
+  background:#ffcc00;
+  width:95%;
+  margin-left:2.5%;
+  height:200rpx;
+  display:flex;
+  flex-direction:row;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.bigIcon{
+  width:80rpx;
+  height:100rpx;
+  margin-top:50rpx;
+  margin-left:50rpx;
+}
+.right{
+  width:70%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.white{
+  background:#fff;
+  width:95%;
+  margin-left:2.5%;
+  height:atuo;
+  display:flex;
+  flex-direction:column;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}

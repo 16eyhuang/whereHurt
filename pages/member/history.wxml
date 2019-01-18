@@ -1,0 +1,40 @@
+<!--pages/member/history.wxml-->
+<!--<page class="page">
+  <view class="page_title">历史检查列表</view>
+  <view wx:if="{{show}}" class="introduction_title">
+    <view wx:for="{{test}}">
+      <view style='display:flex;margin-bottom:20rpx;' bindtap='toCheckReport' id="{{item.id}}" data-result="{{item.result}}" data-testid="{{item.testid}}" data-disease_name="{{item.disease_name}}">
+        <view class="navigator_item">
+          您做了{{item.disease_name}}的检查
+        </view>
+        <view class="navigator_item">
+          （点击查看）
+        </view>
+      </view>
+    </view>
+  </view>
+</page>-->
+
+<view class="page" style="margin:5%;background-color:white;width:90%;height:100%;">
+  <view class="page_title">历史检查列表</view>
+  <view class="table" style='margin-left:40rpx;'>
+    <view class="tr">
+      <view class="th">疾病编号</view>
+      <view class="th">疾病名称</view>
+    </view>
+    <view wx:for="{{info.test}}" class='tr'>
+      <!--<view bindtap='toCheckReport' id="{{item.id}}" data-result="{{item.result}}" data-testid="{{item.testid}}" data-disease_name="{{item.disease_name}}" style='display:flex;'>-->
+      <view class="th" style='padding-left:20rpx; font-weight:bold;'>
+        {{item.testid}}
+      </view>
+      <view class="th" style='color:#2fcabb;' bindtap='toCheckReport' id="{{item.id}}" data-result="{{item.result}}" data-testid="{{item.testid}}" data-disease_name="{{item.disease_name}}">
+        {{item.disease_name}}
+      </view>
+      <!--</view>-->
+    </view>
+  </view>
+  <view style='display:flex; padding:20rpx;'>
+    <button class='button11' bindtap='ReCheck'>重新检查</button>
+    <button class='button11' bindtap='Back'>返回主页</button>
+  </view>
+</view>

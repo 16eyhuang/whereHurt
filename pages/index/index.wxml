@@ -1,0 +1,25 @@
+<view class="page">
+  <!--首页-->
+  <view class="classname" style="height:{{height}}px;width: 100%;">
+    <view style="height:{{height*0.53}}px;width: 100%; background-color: #efefef;">
+      <image src="../../public/image/logo.png" style="height:100%; width: 100%;border-bottom:5rpx solid #efefef;"></image>
+    </view>
+    <view style="height:{{height*0.40}}px;width: 100%;">
+      <view style="height: 50%;background-color:#fff;display:flex;flex-direction:row;align-items:center;border-bottom:1rpx solid #efefef"  bindtap="LocationChoose">
+        <image style="height:80rpx;width:80rpx;margin-left:30%;" src="../../icon/Picture1.png" ></image>
+        <view style="margin-left:3%;background-color:#fff;font-size:50rpx;color:black;">自检入口</view>
+      </view>
+      <view style="height: 50%;background-color:#fff;display:flex;flex-direction:row;align-items:center;"  bindtap="SportsChoose">
+        <image style="height:80rpx;width:80rpx;margin-left:30%;" src="../../icon/Picture2.png" ></image>
+        <view style="margin-left:3%;background-color:#fff;font-size:50rpx;color:black;">运动入口</view>
+      </view>
+    </view>
+    <view style='border-bottom:5rpx solid #efefef;'></view>
+    <view style="height:{{height*0.07}}px;width: 100%; background-color: #fff;">
+      <!--<image src="../../public/image/end.png" style="height: 100%; width:100%;"></image>
+    -->
+      <text class='textStyle'>全心全意守护您的健康</text>
+    </view>
+  </view>
+  <!--</scroll-view>-->
+</view>

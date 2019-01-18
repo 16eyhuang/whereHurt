@@ -1,0 +1,61 @@
+<!--pages/sportsChoose/sportsReport/sportsReport.wxml-->
+<view class='tagsPanel'>
+  <view wx:for="{{showTag}}" wx:key="tags">
+    <view class='tags' >{{item}}</view>
+  </view>
+</view>
+<view class='orange'>
+  <view class='iconPanel'>
+    <image src='../../../images/suggest.png' class='bigIcon'></image>
+  </view>
+  <view class='right'>
+    <text style='font-size:35rpx;color:#fff;font-weight:bold;margin-top:40rpx;margin-bottom:40rpx;'>{{head}}</text>
+    <text style='font-size:30rpx;color:#fff;'>{{summary}}</text>
+  </view>
+</view>
+<view wx:if="{{isdown}}" class='white'>
+  <view style='width:100%;height:100rpx;' hover-class='bg_grey'>
+    <view style='padding-top:30rpx;padding-left:40rpx;font-size:30rpx;color:#ffcc00;font-weight:bold;'>网球运动分析与建议</view>
+  </view>
+  <view style='width:90%;height:auto;margin-left:40rpx;font-size:28rpx;' hover-class='bg_grey'>
+  {{text1}}
+  </view>
+  <view style='width:100%;height:100rpx;' hover-class='bg_grey'>
+    <view style='padding-top:30rpx;padding-left:40rpx;font-size:30rpx;color:#ffcc00;font-weight:bold;'>握拍方式分析</view>
+  </view>
+  <view style='width:90%;height:auto;margin-left:40rpx;font-size:28rpx;' hover-class='bg_grey'>
+  {{text2}}
+  </view>
+  <view style='width:100%;height:100rpx;' hover-class='bg_grey'>
+    <view style='padding-top:30rpx;padding-left:40rpx;font-size:30rpx;color:#ffcc00;font-weight:bold;'>运动损伤分析</view>
+  </view>
+  <view style='width:90%;height:auto;margin-left:40rpx;font-size:28rpx;' hover-class='bg_grey'>
+  {{text3}}
+  </view>
+  <view style='margin-top:20rpx;width:90%;height:auto;margin-left:40rpx;font-size:30rpx;font-weight:bold;color:#2fcabb' hover-class='bg_grey' bindtap='toDisease'>网球肘（点击查看词条）
+  </view>
+  <view style='margin-left:40rpx;margin-top:20rpx;width:90%;height:auto;font-size:25rpx;display:flex;flex-direction:row;align-items:center;' hover-class='bg_grey'>
+    <image src='../../../images/yemian.png' style='width:30rpx;height:30rpx;'></image>
+    <view style='margin-left:20rpx;margin-right:50rpx;'>11篇参考文献</view>
+    <image src='../../../images/ren.png' style='width:30rpx;height:30rpx;'></image>
+    <view style='margin-left:20rpx;margin-right:50rpx;'>7.11%的人和你一样</view>
+  </view>
+  <view style='width:100%;height:100rpx;'>
+    <view style='display:flex;flex-direction:row;width:100rpx;height:auto;align-items:center;font-size:28rpx;color:#2fcabb;margin-left:80%;margin-top:30rpx;' bindtap='click' hover-class='bg_grey'>
+      <image src='../../../images/shuangjiantou.png' style='width:30rpx;height:30rpx;'></image>
+      <view>收起</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!isdown}}" style='margin-left:2.5%;width:95%;height:100rpx;background:#fff'>
+    <view style='display:flex;flex-direction:row;width:100rpx;height:auto;align-items:center;font-size:28rpx;color:#2fcabb;margin-left:80%;padding-top:30rpx;' bindtap='click' hover-class='bg_grey'>
+      <image src='../../../images/xiashuang.png' style='width:30rpx;height:30rpx;'></image>
+      <view>展开</view>
+    </view>
+</view>
+<view style='display:flex;flex-direction:row'>
+    <button style='width:250rpx;height:100rpx;margin:30rpx 20rpx 0 60rpx;background:#2fcabb;color:#fff;border-radius:50rpx;' bindtap='back'>返回首页</button>
+    <button style='width:250rpx;height:100rpx;margin:30rpx 20rpx 0 90rpx;background:#2fcabb;color:#fff;border-radius:50rpx;' bindtap='recheck'>重新检查</button>
+</view>
+
+

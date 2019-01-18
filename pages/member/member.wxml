@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="avatar">
+    <view class="avatar_image">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="avatar_text">
+      <open-data type="userNickName" style="font-size:40rpx"></open-data>
+    </view>
+  </view>
+  <view class="listgroup">
+    <navigator url="../../pages/USER/userListInfo" class="view-list arrow-right " hover-class="weui-cell_active">
+      <image class="icon" src="../../images/person.png"></image>
+      <view class="list-text">个人信息</view>
+    </navigator>
+  </view>
+  <view class="listgroup">
+    <navigator url="history" class="view-list arrow-right " hover-class="weui-cell_active">
+      <image class="icon" src="../../images/history.png"></image>
+      <view class="list-text">历史报告</view>
+    </navigator>
+  </view>
+  <view class="listgroup">
+    <navigator url="issues" class="view-list arrow-right " hover-class="weui-cell_active">
+      <image class="icon" src="../../images/feedback.png"></image>
+      <view class="list-text">意见反馈</view>
+    </navigator>
+  </view>
+  <view class="listgroup">
+    <navigator url="about" class="view-list arrow-right " hover-class="weui-cell_active">
+      <image class="icon" src="../../images/about.png"></image>
+      <view class="list-text">关于</view>
+    </navigator>
+  </view>
+
+</view>

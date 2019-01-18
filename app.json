@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/member/member",
+    "pages/locationChoose/locationChoose",
+    "pages/smallReport/smallReport",
+    "pages/test/test",
+    "pages/disease/disease",
+    "pages/FinalReport/FinalReport",
+    "pages/message/message",
+    "pages/member/about",
+    "pages/member/issues",
+    "pages/member/userinfo",
+    "pages/testReport/testReport",
+    "pages/search/search",
+    "pages/member/history",
+    "pages/search/list",
+    "pages/suggestion/suggestion",
+    "pages/member/checkReport",
+    "pages/USER/userListInfo",
+    "pages/sportsChoose/sportsChoose",
+    "pages/sportsChoose/sportsTest/sportsTest",
+    "pages/sportsChoose/sportsReport/sportsReport"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "哪儿疼",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#4EB2EE",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "icon/syd.png",
+        "selectedIconPath": "icon/syd1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "icon/2.png",
+        "selectedIconPath": "icon/20.png",
+        "text": "资讯课堂"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "iconPath": "icon/3.png",
+        "selectedIconPath": "icon/30.png",
+        "text": "用户中心"
+      }
+    ]
+  }
+}

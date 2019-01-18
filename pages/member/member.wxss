@@ -1,0 +1,106 @@
+/**more.wxss**/
+.container{
+  background-color: #f4f8fa;
+  padding: 0;
+  font-size: 30rpx;
+}
+/* pages/mine/mine.wxss */
+
+.userInfo{
+    padding: 0 40rpx;
+     display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    height: 230rpx;
+}
+.userInfo .avatarsize{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    margin-right: 40rpx;
+}
+.information{  
+    display: flex;
+    flex-direction: row;
+    width: 220rpx;
+    height:70rpx;
+    align-items: center;
+    background-color: #ffcb63;
+    position: absolute;
+    top:50%;
+    right: 40rpx;
+    margin-top: -35rpx;
+    z-index: 22;
+}
+.font-color-white{
+   color:#fff;
+}
+.font-color-black{
+  color:#000;
+}
+.information .information-image{
+    width: 60rpx;
+    height: 40rpx;
+    margin: 0 10rpx;
+
+}
+.listgroup{
+    margin-top: 20rpx;
+}
+.listgroup .view-list{
+    display: flex;
+    flex-direction: row;
+    height: 120rpx;
+    padding: 0 30rpx;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+}
+.listgroup .view-list .icon{
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 30rpx;
+}
+.listgroup .view-list  .list-text{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding-right: 36rpx;
+    align-items: center;   
+}
+
+.avatar {
+  display: flex;
+  margin-top: 30rpx;
+  padding: 50rpx 30rpx;
+  background-color: #fff;
+  border: 2rpx solid #e6e6e6;
+}
+.avatar_image{
+   width:110rpx;
+}
+
+.avatar .avatar_image {
+  width: 100rpx;
+  height: 100rpx;
+  border: 2rpx solid #ccc;
+}
+
+.avatar .avatar_text {
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  padding-left: 35rpx;
+}
+
+.avatar .avatar_text .nick-name {
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.avatar .avatar_text .motto {
+  font-size: 24rpx;
+  color: #939393;
+}

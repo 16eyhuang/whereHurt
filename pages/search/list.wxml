@@ -1,0 +1,9 @@
+<view class='page1'>
+  <view wx:for="{{diseaseList}}" class='introduction_text'>
+    <navigator class='navigator' id="{{item.id}}" url="../disease/disease?id={{item.id}}">
+      <image src='../../icon/jibingguanli.png' class='icon'></image>
+      <text class='text'>{{item.name}}--{{item.id}}</text>
+      <image src='../../icon/RightA.png' class='rightA'></image>
+    </navigator>
+  </view>
+</view>

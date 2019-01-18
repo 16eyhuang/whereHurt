@@ -1,0 +1,59 @@
+<!--pages/smallReport/smallReport.wxml-->
+<scroll-view class="page" scroll-y="true">
+  <view class="page_title">初步报告</view>
+  <view class="introduction_title" style='color:#0033FF'>【您的选择】
+    <view class="introduction" style='color:#000'>损伤部位为：{{formdata.location}}</view>
+    <view wx:if="{{flag}}" bindtap="toggleDown" class="tarrow" style='-webkit-transform:matrix(0.71, {{isdown?"-0.71":"0.71"}}, 0.71, {{isdown?"0.71":"-0.71"}}, 0, 0);transform:matrix(0.71, {{isdown?"-0.71":"0.71"}}, 0.71, {{isdown?"0.71":"-0.71"}}, 0, 0);'></view>
+    <view wx:if="{{isdown}}" class="introduction">
+      <view style='color:#000'>急慢性为：{{formdata.quality}}</view>
+      <view style='color:#000'>受损强度为：{{formdata.strength}}</view>
+    </view>
+  </view>
+  <view class="introduction_title" style='color:#0033FF'>【您选择的示意图】
+    <view wx:if="{{flag}}" bindtap="toDown" class="tarrow" style='-webkit-transform:matrix(0.71, {{isshow?"-0.71":"0.71"}}, 0.71, {{isshow?"0.71":"-0.71"}}, 0, 0);transform:matrix(0.71, {{isshow?"-0.71":"0.71"}}, 0.71, {{isshow?"0.71":"-0.71"}}, 0, 0);'></view>
+    <view wx:if="{{isshow}}" class="image">
+      <image style='margin-left:20%;margin-top:20rpx;margin-bottom:20rpx;height:350rpx;width:400rpx;border:1rpx solid #000;' class="image" src="{{related_info.main_pic}}"></image>
+      <view style='display:flex;'>
+        <view style='color:#0033FF'>【概述】</view>
+        <view wx:if="{{flag}}" bindtap="toggleDown1" class="tarrow" style='-webkit-transform:matrix(0.71, {{isdown1?"-0.71":"0.71"}}, 0.71, {{isdown1?"0.71":"-0.71"}}, 0, 0);transform:matrix(0.71, {{isdown1?"-0.71":"0.71"}}, 0.71, {{isdown1?"0.71":"-0.71"}}, 0, 0);'></view>
+      </view>
+      <view wx:if="{{isdown1}}" class="introduction">
+        <view style="font-size:30rpx" style='color:#000'>{{related_info.abstract}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="introduction_title" style='color:#0033FF'>您的{{formdata.location}}疾患最有可能是:
+    <view style='display: flex; font-size:30rpx'>
+      <view id="{{related_info.id}}" class="navigator_item" bindtap="toDisease">
+        {{related_info.name}}----
+      </view>
+      <view id="{{related_info.id}}" class="navigator_item" bindtap="toTest">{{related_info.name}}检查方法
+      </view>
+    </view>
+  </view>
+  <view hidden="{{showRelated_info}}" class="introduction_title" style='color:#0033FF'>您的{{formdata.location}}疾患还有可能是:
+    <swiper current="{{currentTap}}" class="swiper-class" indicator-dots="true">
+      <block wx:for="{{related_info.diagnosis}}" class="pro-choose-block" wx:key="this">
+        <swiper-item class="posture-choose-item" style='font-size:30rpx'>
+          <view style='display: flex;margin-bottom:20rpx;'>
+            <view class="navigator_item" bindtap="toDisease" id="{{item.id}}">
+              {{item.name}}----
+            </view>
+            <view class="navigator_item" bindtap="toTest" id="{{item.id}}">
+              {{item.name}}检查方法
+            </view>
+          </view>
+          <image id="{{item.id}}" data-current="{{index+1}}" bindtap="previewImage" src="{{item.main_pic}}" style="heigh:600rpx" mode="aspectFit" />(注：请点击图片查看副图)
+          <label style="font-size:30rpx">
+            <view class="note_item_text" style="margin-bottom: 50rpx;color:#000">{{item.abstract}}</view>
+          </label>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view>
+    <image class="leftArrow" bindtap="leftArrowClicked" src="/public/image/arrow_left@2x.png"></image>
+    <image class="rightArrow" bindtap="rightArrowClicked" src="/public/image/arrow_right@2x.png"></image>
+  </view>
+  <view class="introduction_title" style='color:#0033FF'>参考文献</view>
+</scroll-view>

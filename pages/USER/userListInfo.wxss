@@ -1,0 +1,55 @@
+/* pages/USER/userListInfo.wxss */
+
+.avatar {
+  display: flex;
+  margin-top: 30rpx;
+  padding: 50rpx 30rpx;
+  border: 2rpx solid #e6e6e6;
+  background-color: white;
+}
+.avatar_image{
+   width:110rpx;
+}
+
+.avatar .avatar_image {
+  width: 100rpx;
+  height: 100rpx;
+  border: 2rpx solid #ccc;
+}
+
+.avatar .avatar_text {
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  padding-left: 35rpx;
+}
+
+.avatar .avatar_text .nick-name {
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.avatar .avatar_text .motto {
+  font-size: 24rpx;
+  color: #939393;
+}
+.title{
+  margin:40rpx;
+  margin-top: 0rpx;
+}
+.context{
+  position: absolute;
+  left:400rpx;
+}
+.button {
+  width: 300rpx;
+  height: 74rpx;
+  background: #2fcabb;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 28rpx;
+  border-radius: 0;
+  margin-left: 20rpx;
+}

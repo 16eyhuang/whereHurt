@@ -1,0 +1,41 @@
+<!--pages/disease/disease.wxml-->
+<view class="page">
+  <view class="container1" style='width:90%;margin-bottom:10%;margin-top:10%;margin-left:5%;background-color:white;'>
+    <block wx:if="{{showLoading}}">
+      <view class="loading">玩命加载中…</view>
+    </block>
+    <block wx:elif="{{showContent}}">
+      <view class="page_title">{{info.name}}</view>
+      <view style='display:flex;'>
+      <view class="introduction_title" style='color:#3300FF'>【疾病简介】</view>
+      <view bindtap="toggleDown" class="tarrow" style='-webkit-transform:matrix(0.71, {{isdown?"-0.71":"0.71"}}, 0.71, {{isdown?"0.71":"-0.71"}}, 0, 0);transform:matrix(0.71, {{isdown?"-0.71":"0.71"}}, 0.71, {{isdown?"0.71":"-0.71"}}, 0, 0);'></view>
+      </view>
+      <view  wx:if="{{isdown}}" class="introduction">
+      <view class="introduction">{{info.abstract}}</view>
+      </view>
+      <view style='display:flex;'>
+      <view class="introduction_title" style='color:#3300FF'>【背景知识】</view>
+      <view bindtap="toggleDown1" class="tarrow" style='-webkit-transform:matrix(0.71, {{isdown1?"-0.71":"0.71"}}, 0.71, {{isdown1?"0.71":"-0.71"}}, 0, 0);transform:matrix(0.71, {{isdown1?"-0.71":"0.71"}}, 0.71, {{isdown1?"0.71":"-0.71"}}, 0, 0);'></view>
+      </view>
+      <view  wx:if="{{isdown1}}" class="introduction">
+      <view class="introduction">{{info.clinic}}</view>
+      <block wx:for="{{clinic_pics}}">
+        <image mode="aspectFit" src="{{item}}" style="margin-left:2.5%;margin-bottom:50rpx; width:95%;border:1rpx solid black;"></image>
+      </block>
+      </view>
+      <view style='display:flex;'>
+      <view class="introduction_title" style='color:#3300FF'>【发病机制】</view>
+      <view bindtap="toggleDown2" class="tarrow" style='-webkit-transform:matrix(0.71, {{isdown2?"-0.71":"0.71"}}, 0.71, {{isdown2?"0.71":"-0.71"}}, 0, 0);transform:matrix(0.71, {{isdown2?"-0.71":"0.71"}}, 0.71, {{isdown2?"0.71":"-0.71"}}, 0, 0);'></view>
+      </view>
+      <view  wx:if="{{isdown2}}" class="introduction">
+      <view class="introduction">{{info.scenario}}</view>
+      <block wx:for="{{scenario_pics}}">
+        <image mode="aspectFit" src="{{item}}" style="margin-left:2.5%;margin-bottom:50rpx; width:95%;border:1rpx solid black;"></image>
+      </block>
+      </view>
+      <view style='height:30rpx;'></view>
+      <view class="button" bindtap="toTest" id="{{info.id}}" >查看相关检查</view>
+      <view style='height:50rpx;'></view>
+    </block>
+  </view>
+</view>

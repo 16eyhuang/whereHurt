@@ -1,0 +1,41 @@
+/* pages/sportsChoose/sportsTest/sportsTest.wxss */
+.page{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 600rpx;
+  height: auto;
+  width:90%;
+  margin:5%;
+}
+.top{
+  height: auto;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1rpx solid #efefef;
+}
+.topText{
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #2fcabb;
+}
+.panel{
+  height: auto;
+  width: 100%;
+  border-bottom: 1rpx solid #efefef;
+}
+.text{
+  font-size: 35rpx;
+  margin-left: 20rpx;
+}
+.swiper{
+  height:550rpx;
+  width: 100%;
+}
+.radio{
+  word-break: break-all;
+  width:93%;
+  padding:10rpx;
+  border:1rpx solid #efefef;
+  border-radius: 10rpx;
+}

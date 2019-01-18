@@ -1,0 +1,17 @@
+<!--pages/member/checkReport.wxml-->
+<view class="page" style='margin-left:50rpx;margin-right:50rpx'>
+  <view class="page_title">{{disease_name}}的检查报告</view>
+  <view class="introduction_title" style='margin-top: 20rpx;'>您的检查结果如下：(可滑动)</view>
+  <view>
+    <scroll-view scroll-y style="height:850rpx;background-color:#FFFFFF;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <block wx:for="{{result}}" class="pro-choose-block" style="margin-top:30rpx;" wx:key="this">
+        <view class="posture-choose-item" style='font-size:30rpx;font-weight:bold;'>
+          <view wx:if="{{item.choose}}">{{index+1}}.症状：{{item.name}}
+            <view wx:if="{{item.result}}">注释：{{item.result}}</view>
+          </view>
+        </view>
+      </block>
+       <view wx:if="{{checked}}" class="posture-choose-item" style='font-size:30rpx;font-weight:bold;'>组合结果：根据您的检查，您患有{{disease_name}}疾病的可能性小，但仍不能排除您患有其他疾病的可能性。</view>  
+    </scroll-view>  
+  </view>
+</view>
