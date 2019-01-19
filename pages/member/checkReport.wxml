@@ -8,6 +8,7 @@
         <view class="posture-choose-item" style='font-size:30rpx;font-weight:bold;'>
           <view wx:if="{{item.choose}}">{{index+1}}.症状：{{item.name}}
             <view wx:if="{{item.result}}">注释：{{item.result}}</view>
+            <view wx:else>注释：无</view>
           </view>
         </view>
       </block>

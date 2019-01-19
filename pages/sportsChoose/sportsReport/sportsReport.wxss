@@ -67,3 +67,7 @@
   border-bottom-left-radius: 30rpx;
   border-bottom-right-radius: 30rpx;
 }
+.swiper{
+  height:1000rpx;
+  width: 100%;
+}
