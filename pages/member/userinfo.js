@@ -22,7 +22,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that=this
+    let currentList=wx.getStorageSync('listInfo')||''
+    console.log(currentList)
+    if(currentList!=''){
+      that.setData({
+        currentList
+      })
+    }
   },
   formSubmit: function (e) {
     var formdata = e.detail.value

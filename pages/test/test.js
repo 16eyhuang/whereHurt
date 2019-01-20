@@ -76,15 +76,28 @@ Page({
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var wj = e.detail.value;
     var flag=1;
+    
+    /*如果哪一项未填就跳转到该项 */
+    let currentTap=0
     console.info(wj)
-    for (var i in wj) {
+    for (let i in wj) {
       if(wj[i]===''){
         wx.showModal({
           title: '提示',
-          content: '您还有必选项未选，请检查一下',
+          content: '当前步骤未做',
         })
+        console.log(currentTap)
         flag=0
+        break
+      }
+      else{
+        currentTap++
       }        
+    }
+    if(flag==0){
+      that.setData({
+        currentTap
+      })
     }
     if(flag===1){
       that.setData({

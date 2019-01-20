@@ -8,10 +8,10 @@
       <view class="form-right">
         <radio-group class="radio-group" name="gender" bindchange="radioChange">
           <label class="radio">
-            <radio value="0" />男
+            <radio value="0" checked='{{currentList.gender=="0"}}'/>男
           </label>
           <label class="radio">
-            <radio value="1" />女
+            <radio value="1" checked='{{currentList.gender=="1"}}'/>女
           </label>
         </radio-group>
       </view>
@@ -20,7 +20,7 @@
       <view class="form-left">
         <text>*</text>您的年龄:</view>
       <view class="form-right other-right">
-        <input name="age" type="text" class="input" />
+        <input name="age" type="text" class="input" value='{{currentList.age}}'/>
         <view class="input-text">岁</view>
       </view>
     </view>
@@ -28,7 +28,7 @@
       <view class="form-left">
         <text>*</text>您的身高:</view>
       <view class="form-right other-right">
-        <input name="height" type="text" class="input" />
+        <input name="height" type="text" class="input" value='{{currentList.height}}'/>
         <view class="age-text">cm</view>
       </view>
     </view>
@@ -36,7 +36,7 @@
       <view class="form-left">
         <text>*</text>您的体重:</view>
       <view class="form-right other-right">
-        <input name="weight" type="text" class="input" />
+        <input name="weight" type="text" class="input" value='{{currentList.weight}}'/>
         <view class="age-text">kg</view>
       </view>
     </view>
@@ -45,14 +45,14 @@
       <view class="form-left">
         <text>*</text>您经常做的运动:</view>
       <view class="form-right other-right">
-        <input name="sport" type="text" class="age" placeholder="例如，篮球" />
+        <input name="sport" type="text" class="age" placeholder="例如，篮球" value='{{currentList.sport}}'/>
       </view>
     </view>
     <view class="form-item" style="margin-top:20rpx;">
       <view class="form-left">
         <text>*</text>您运动后感觉如何:</view>
       <view class="form-right other-right">
-        <input name="frequency" type="text" class="input" placeholder=""/>
+        <input name="frequency" type="text" class="input" placeholder="" value='{{currentList.frequency}}'/>
       </view>
     </view>
     <view style='display:flex;'>
