@@ -84,14 +84,12 @@ Page({
       if(wj[i]===''){
         wx.showModal({
           title: '提示',
-          content: '当前步骤未做',
+          content: '当前步骤未做完',
         })
+        currentTap=Number.parseInt(i[0])
         console.log(currentTap)
         flag=0
         break
-      }
-      else{
-        currentTap++
       }        
     }
     if(flag==0){

@@ -1,4 +1,6 @@
 {
+  "navigationBarBackgroundColor": "#2fcabb",
+  "navigationBarTextStyle": "white",
   "navigationBarTitleText": "反馈",
   "enablePullDownRefresh": false
 }

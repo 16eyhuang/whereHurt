@@ -15,7 +15,8 @@ Page({
     disease_id:'',
     currentTap: 0,
     const_url: "https://wx.med.stu.edu.cn/",
-    checked: false
+    checked: false,
+    currentPage: 0
   },
 
   /**
@@ -23,8 +24,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    let testReportTemp = wx.getStorageSync('testReport')
+    console.log(testReportTemp)
+    for(let i in testReportTemp){
+      testReportTemp[i].isdown=true
+    }
     that.setData({
-      testReport: wx.getStorageSync('testReport'),
+      testReport: testReportTemp,
       disease_name: options.disease_name,
       disease_id: options.disease_id
     })
@@ -36,6 +42,17 @@ Page({
     if(last['name']==='组合结果'){
       that.setData({
         checked:true
+      })
+    }
+    else{
+      let obj={}
+      obj.name='组合结果'
+      obj.choose=true
+      obj.result = '根据您的检查，您患有'+options.disease_name+'疾病的可能性小，但仍不能排除您患有其他疾病的可能性。'
+      obj.isdown=true
+      testReport.push(obj)
+      that.setData({
+        testReport
       })
     }
     console.log(that.data.checked)
@@ -162,5 +179,22 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /*切换swiper页面 */
+  swiperChange: function (e) {
+    let that = this
+    that.setData({
+      currentPage: e.detail.current
+    })
+    console.log(that.data.currentPage)
+  },
+  click: function (e) {
+    let that = this
+    let testReport = that.data.testReport
+    let currentPage = that.data.currentPage
+    testReport[currentPage].isdown = !testReport[currentPage].isdown
+    that.setData({
+      testReport
+    })
+  },
 })

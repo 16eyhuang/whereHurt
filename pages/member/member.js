@@ -12,9 +12,11 @@ Page({
 
    onLoad(option) {
       //调用应用实例的方法获取全局数据
-      this.setData({
-        userInfo: app.globalData.userInfo
-      });
+      // let userInfo=app.globalData.userInfo
+      // console.log(userInfo)
+      // this.setData({
+      //   userInfo: app.globalData.userInfo
+      // });
    },
 
    onShow() {

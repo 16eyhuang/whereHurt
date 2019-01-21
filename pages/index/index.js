@@ -22,25 +22,26 @@ Page({
     };
     wx.setStorageSync('showModal', false)
 
-    var listInfomation=wx.getStorageSync('listInfo');
-    if(listInfomation.isData!=1){
-    wx.showModal({
-      title: '温馨提示',
-      content: '如果您是第一次使用，请先在“用户信息”里完善个人基本信息',
-      confirmText: '前往完善',
-      confirmColor: "#2fcabb",
-      success: function (res) {
-        if (res.confirm) {
-          wx.navigateTo({
-            url: '/pages/member/userinfo',
-          })
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
-    }
+    // var listInfomation=wx.getStorageSync('listInfo');
+    // console.log(listInfomation)
+    //  if(listInfomation.isData!=1){
+    // wx.showModal({
+    //   title: '温馨提示',
+    //   content: '如果您是第一次使用，请先在“用户信息”里完善个人基本信息',
+    //   confirmText: '前往完善',
+    //   confirmColor: "#2fcabb",
+    //   success: function (res) {
+    //     if (res.confirm) {
+    //       wx.navigateTo({
+    //         url: '/pages/member/userinfo',
+    //       })
+    //       console.log('用户点击确定')
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
+    // }
   },
   onShow: function () {
 

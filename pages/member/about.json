@@ -1,4 +1,6 @@
 {
+  "navigationBarBackgroundColor": "#2fcabb",
   "navigationBarTitleText": "关于",
+  "navigationBarTextStyle": "white",
   "enablePullDownRefresh": false
 }

@@ -22,6 +22,7 @@ Page({
     })
     console.log(that.data.userid)
     var opid = wx.getStorageSync('opid')
+    console.log(opid)
     var url = GURL + "&opid=" + opid
     API.fetchGet(url, (err, data) => {
       console.info(data)

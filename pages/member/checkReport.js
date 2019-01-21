@@ -8,7 +8,8 @@ Page({
     testid: 0,
     disease_name:null,
     result: null,
-    checked:false
+    checked:false,
+    currentPage:0
   },
 
   /**
@@ -22,6 +23,7 @@ Page({
     var disease_name = options.disease_name
     var result = wx.getStorageSync(testid)
     for (var i in result) {
+      result[i].isdown=true
       if (result[i]['choose'] === "否") {
         result[i]['choose'] = false
       }
@@ -47,10 +49,22 @@ Page({
       }
     }
 
+    var last = result[result.length - 1];
+    if (last['name'] === '组合结果') {
+    }
+    else {
+      let obj = {}
+      obj.name = '组合结果'
+      obj.choose = true
+      obj.result = '根据您的检查，您患有' + options.disease_name + '疾病的可能性小，但仍不能排除您患有其他疾病的可能性。'
+      obj.isdown = true
+      result.push(obj)
+    }
+
     that.setData({
       testid: testid,
       disease_name: disease_name,
-      result: result
+      testReport: result
     })
   },
 
@@ -101,5 +115,22 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /*切换swiper页面 */
+  swiperChange: function (e) {
+    let that = this
+    that.setData({
+      currentPage: e.detail.current
+    })
+    console.log(that.data.currentPage)
+  },
+  click: function (e) {
+    let that = this
+    let testReport = that.data.testReport
+    let currentPage = that.data.currentPage
+    testReport[currentPage].isdown = !testReport[currentPage].isdown
+    that.setData({
+      testReport
+    })
+  },
 })

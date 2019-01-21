@@ -107,3 +107,46 @@
   text-align: center;
   width: 70%;
 }
+.swiper{
+  height:700rpx;
+  width: 100%;
+}
+.orange{
+  background:#ffcc00;
+  width:95%;
+  margin-left:2.5%;
+  height:200rpx;
+  display:flex;
+  flex-direction:row;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.iconPanel{
+  width:30%;
+  height:100%;
+}
+.bigIcon{
+  width:80rpx;
+  height:100rpx;
+  margin-top:50rpx;
+  margin-left:50rpx;
+}
+.right{
+  width:70%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.white{
+  background:#fff;
+  width:95%;
+  margin-left:2.5%;
+  height:atuo;
+  display:flex;
+  flex-direction:column;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+.bg_grey{
+  background: #f0f0f0;
+}
