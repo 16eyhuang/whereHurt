@@ -31,7 +31,7 @@
       </view>
     </view>
   </view>
-  <view hidden="{{showRelated_info}}" class="introduction_title" style='color:#0033FF'>您的{{formdata.location}}疾患还有可能是:
+  <view wx:if="{{related_info.diagnosis}}" class="introduction_title" style='color:#0033FF'>您的{{formdata.location}}疾患还有可能是:
     <swiper current="{{currentTap}}" class="swiper-class" indicator-dots="true">
       <block wx:for="{{related_info.diagnosis}}" class="pro-choose-block" wx:key="this">
         <swiper-item class="posture-choose-item" style='font-size:30rpx'>
@@ -43,7 +43,7 @@
               {{item.name}}检查方法
             </view>
           </view>
-          <image id="{{item.id}}" data-current="{{index+1}}" bindtap="previewImage" src="{{item.main_pic}}" style="heigh:600rpx" mode="aspectFit" />(注：请点击图片查看副图)
+          <image id="{{item.id}}" data-current="{{index+1}}" bindtap="previewImage" src="{{item.main_pic}}" style="heigh:600rpx" mode="aspectFit" />(注：请点击图片查看大图和组图)
           <label style="font-size:30rpx">
             <view class="note_item_text" style="margin-bottom: 50rpx;color:#000">{{item.abstract}}</view>
           </label>
@@ -51,7 +51,7 @@
       </block>
     </swiper>
   </view>
-  <view>
+  <view wx:if="{{related_info.diagnosis}}">
     <image class="leftArrow" bindtap="leftArrowClicked" src="/public/image/arrow_left@2x.png"></image>
     <image class="rightArrow" bindtap="rightArrowClicked" src="/public/image/arrow_right@2x.png"></image>
   </view>

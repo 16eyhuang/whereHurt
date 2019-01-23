@@ -11,8 +11,8 @@ module.exports = {
       return HOST_URL + '?action=uploadimg';
    },
    feedback:function(){
-     var session = wx.getStorageSync("session") || app.globalData.session;
-     var openid = wx.getStorageSync("openid") || app.globalData.openid;
+     var session =  app.globalData.session;
+     var openid =  app.globalData.openid;
      return HOST_URL + '?action=feedback&session=' + session + "&openid=" + openid;
    }
 }

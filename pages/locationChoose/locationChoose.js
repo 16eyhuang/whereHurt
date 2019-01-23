@@ -26,7 +26,7 @@ Page({
   onLoad: function () {
     var that = this
     that.setData({
-      'formdata.userid': app.globalData.userid.userid
+      'formdata.userid': app.globalData.userinfo.userid
     })
     console.log(that.data.formdata.userid)
     try {
@@ -279,10 +279,12 @@ Page({
   },
 
   previewImage: function (e) {
-    var id = this.data.formdata.disease_id;
+    console.info(e)
+    var id =e.currentTarget.id
+    var current = e.currentTarget.dataset.current
     var pics=this.data.pics
     wx.previewImage({
-      urls: pics[id] // 需要预览的图片http链接列表  
+      urls: pics[id]// 需要预览的图片http链接列表  
     })
   },
 

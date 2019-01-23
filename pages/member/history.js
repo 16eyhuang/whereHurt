@@ -1,4 +1,4 @@
-const GURL = "https://wx.med.stu.edu.cn/selftest/api.php?action=getop_details";
+const GURL = "https://wx.med.stu.edu.cn/selftest/api.php?action=listop";
 var API = require("../../utils/api");
 var app = getApp()
 Page({
@@ -18,12 +18,13 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      userid: app.globalData.userid
+      userid: app.globalData.userinfo.userid
     })
     console.log(that.data.userid)
+    var userid = that.data.userid
     var opid = wx.getStorageSync('opid')
     console.log(opid)
-    var url = GURL + "&opid=" + opid
+    var url = GURL + "&userid=" + userid
     API.fetchGet(url, (err, data) => {
       console.info(data)
       that.setData({
@@ -32,7 +33,6 @@ Page({
         showContent: true
       })
       console.log(that.data.info)
-      console.log(that.data.info.test)
       wx.setStorage({
         key: 'test',
         data: that.data.info.test,
@@ -41,19 +41,9 @@ Page({
   },
   toCheckReport: function (e) {
     console.info(e)
-    var result = e.currentTarget.dataset.result
-    var testid = e.currentTarget.dataset.testid
-    var disease_name = e.currentTarget.dataset.disease_name
-    wx.setStorage({
-      key: testid,
-      data: result,
-    })
-    wx.setStorage({
-      key: 'testid',
-      data: testid,
-    })
+    var opid = e.currentTarget.id
     wx.navigateTo({
-      url: '/pages/member/checkReport?testid=' + testid + '&disease_name=' + disease_name,
+      url: '/pages/member/checkReport?opid='+opid,
     })
   },
   /**

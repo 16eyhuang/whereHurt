@@ -1,49 +1,26 @@
-// pages/member/checkReport.js
-const GURL = "https://wx.med.stu.edu.cn/selftest/api.php?action=getop_details";
-var API = require("../../utils/api");
-var app = getApp()
+// pages/member/reviewReport.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    opid:null,
-    info:null,
-    id: 0,
     disease_name:null,
-    result: null,
-    checked:false,
-    currentPage:0
+    result:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    var that = this
-    that.setData({
-      opid: options.opid
-    })
-    var url = GURL + "&opid=" + options.opid
-    API.fetchGet(url, (err, data) => {
-      console.info(data)
-      that.setData({
-        info: data,
-        test:data.test,
-        showLoading: false,
-        showContent: true
-      })
-      console.log(that.data.info.test)
-    });
-
-
-    var id = options.id
+    var that=this
+    console.info(options)
     var disease_name = options.disease_name
+    var id = options.id
     var result = wx.getStorageSync(id)
+    console.info(disease_name, result)
     for (var i in result) {
-      result[i].isdown=true
+      result[i].isdown = true
       if (result[i]['choose'] === "否") {
         result[i]['choose'] = false
       }
@@ -64,7 +41,7 @@ Page({
         obj["choose"] = true
         result[i] = obj
         that.setData({
-          checked:true
+          checked: true
         })
       }
     }
@@ -80,23 +57,11 @@ Page({
       obj.isdown = true
       result.push(obj)
     }
-
     that.setData({
-      id: id,
       disease_name: disease_name,
-      testReport: result
+      result: result
     })
-  },
-  toReviewReport:function(e){
-    console.info(e)
-    var disease_name = e.currentTarget.dataset.disease_name
-    var result = e.currentTarget.dataset.result
-    var id = e.currentTarget.id
-    wx.setStorageSync('id', id)
-    wx.setStorageSync(id, result)
-    wx.navigateTo({
-      url: 'reviewReport?disease_name=' + disease_name + '&id=' + id,
-    })
+
   },
 
   /**
@@ -146,5 +111,22 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  /*切换swiper页面 */
+  swiperChange: function (e) {
+    let that = this
+    that.setData({
+      currentPage: e.detail.current
+    })
+    console.log(that.data.currentPage)
+  },
+  click: function (e) {
+    let that = this
+    let testReport = that.data.result
+    let currentPage = that.data.currentPage
+    testReport[currentPage].isdown = !testReport[currentPage].isdown
+    that.setData({
+      result: testReport
+    })
+  },
 })

@@ -35,12 +35,12 @@ App({
             if (res.data.status === true) {
               console.info("登陆成功，则保存token到本地");
               wx.setStorageSync('token', res.data);
-              that.globalData.userid = res.data.userinfo
+              that.globalData.userinfo = res.data.userinfo
               that.globalData.openid = res.data.openid
               that.globalData.session = res.data.session
               wx.setStorageSync('openid', res.data.openid)
               wx.setStorageSync('session', res.data.session)
-              console.info(that.globalData.userid)
+              console.info(that.globalData.userinfo)
 
               /*如果用户信息里有相关的数据，则缓存到本地，是否有数据的判断是age是否不为0 */
               let listInfo={}
@@ -113,7 +113,7 @@ App({
 
   //全局数据
   globalData: {
-    userid: null,
+    userinfo: null,
     openid: null,
     session:null
   }

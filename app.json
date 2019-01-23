@@ -20,7 +20,8 @@
     "pages/USER/userListInfo",
     "pages/sportsChoose/sportsChoose",
     "pages/sportsChoose/sportsTest/sportsTest",
-    "pages/sportsChoose/sportsReport/sportsReport"
+    "pages/sportsChoose/sportsReport/sportsReport",
+    "pages/member/reviewReport"
   ],
   "window": {
     "backgroundTextStyle": "light",

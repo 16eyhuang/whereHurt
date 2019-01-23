@@ -21,7 +21,7 @@ Page({
   onLoad: function(){
     var that = this
     that.setData({
-      userid: app.globalData.userid
+      userid: app.globalData.userinfo.userid
     })
     console.log(that.data.userid)
     

@@ -1,5 +1,4 @@
-/* pages/testReport/testReport.wxss */
-
+/* pages/member/reviewReport.wxss */
 .introduction{
   flex: 1;
   -webkit-flex:1;
@@ -71,7 +70,6 @@
   font-size:36rpx;
   font-weight: bold;
   border-bottom:2rpx solid #efefef;
-  padding-left: 20rpx;
 }
 
 .leftArrow {
@@ -79,14 +77,14 @@
   height: 48rpx;
   position: absolute;
   left: 10rpx;
-  bottom: -200rpx;
+  bottom: 200rpx;
 }
 .rightArrow {
   width: 48rpx;
   height: 48rpx;
   right: 10rpx;
   position: absolute;
-  bottom: -200rpx;
+  bottom: 200rpx;
 }
 .note_item_text{
     font-size:30rpx;
@@ -108,25 +106,14 @@
   text-align: center;
   width: 70%;
 }
-.page{
-  width:90%;
-  margin-bottom:10%;
-  margin-top:5%;
-  margin-left:5%;
-  background-color:white;
-}
-.image{
-  height:300rpx;
-  margin:10rpx 50rpx 50rpx 50rpx;
-}
 .swiper{
   height:700rpx;
   width: 100%;
 }
 .orange{
   background:#ffcc00;
-  width:96%;
-  margin-left:2%;
+  width:95%;
+  margin-left:2.5%;
   height:200rpx;
   display:flex;
   flex-direction:row;
@@ -150,9 +137,9 @@
   flex-direction:column;
 }
 .white{
-  background:#f0ffff;
-  width:96%;
-  margin-left:2%;
+  background:#fff;
+  width:95%;
+  margin-left:2.5%;
   height:atuo;
   display:flex;
   flex-direction:column;

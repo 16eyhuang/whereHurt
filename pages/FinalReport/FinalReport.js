@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      userid: app.globalData.userid
+      userid: app.globalData.userinfo.userid
     })
     console.log(that.data.userid)
     var opid = wx.getStorageSync('opid')
@@ -41,18 +41,18 @@ Page({
   toCheckReport: function (e) {
     console.info(e)
     var result = e.currentTarget.dataset.result
-    var testid = e.currentTarget.dataset.testid
+    var id = e.currentTarget.id
     var disease_name = e.currentTarget.dataset.disease_name
     wx.setStorage({
-      key: testid,
+      key: id,
       data: result,
     })
     wx.setStorage({
-      key: 'testid',
-      data: testid,
+      key: 'id',
+      data: id,
     })
     wx.navigateTo({
-      url: '/pages/member/checkReport?testid=' + testid + '&disease_name=' + disease_name,
+      url: '/pages/member/reviewReport?id=' + id + '&disease_name=' + disease_name,
     })
   },
   /**

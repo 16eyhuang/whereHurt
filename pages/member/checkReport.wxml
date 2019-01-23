@@ -1,7 +1,26 @@
 <!--pages/member/checkReport.wxml-->
 <view class="page" style='margin-left:50rpx;margin-right:50rpx'>
-  <view class="page_title">{{disease_name}}的检查报告</view>
-  <view class="introduction_title" style='margin-top: 20rpx;'>您的检查结果如下：(可滑动)</view>
+  <view class="page_title">操作序号为{{opid}}的检查报告</view>
+
+
+  <view class="table" style='margin-left:40rpx;'>
+    <view class="tr">
+      <view class="th">操作编号</view>
+      <view class="th">疾病名称</view>
+    </view>
+    <view wx:for="{{info.test}}" class='tr'>
+      <view class="th" style='padding-left:20rpx; font-weight:bold;'>
+        {{item.id}}
+      </view>
+      <view class="th" style='color:#2fcabb;' bindtap='toReviewReport' id="{{item.id}}" data-result="{{item.result}}" data-testid="{{item.testid}}" data-disease_name="{{item.disease_name}}">
+        {{item.disease_name}}
+      </view>
+      <!--</view>-->
+    </view>
+
+  </view>
+
+
   <view>
     <!-- <scroll-view scroll-y style="height:850rpx;background-color:#FFFFFF;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
       <block wx:for="{{result}}" class="pro-choose-block" style="margin-top:30rpx;" wx:key="this">
@@ -14,43 +33,8 @@
       </block>
        <view wx:if="{{checked}}" class="posture-choose-item" style='font-size:30rpx;font-weight:bold;'>组合结果：根据您的检查，您患有{{disease_name}}疾病的可能性小，但仍不能排除您患有其他疾病的可能性。</view>  
     </scroll-view>   -->
-    <swiper class='swiper' current='{{currentPage}}' indicator-dots='true' bindchange='swiperChange'>
-      <block wx:for="{{testReport}}" wx:key="*testReport">
-      <swiper-item>
-        <view class='orange' style='background:#8a2be2;'>
-          <view class='iconPanel'>
-          <image src='../../images/suggest.png' class='bigIcon'></image>
-        </view>
-        <view class='right'>
-          <text style='font-size:35rpx;color:#fff;font-weight:bold;margin-top:40rpx;margin-bottom:40rpx;'>症状</text>
-          <text style='font-size:30rpx;color:#fff;'>{{item.name}}</text>
-        </view>
-      </view>
-      <view wx:if="{{item.isdown}}" class='white'>
-      <view style='width:100%;height:100rpx;' hover-class='bg_grey'>
-        <view style='padding-top:30rpx;padding-left:40rpx;font-size:30rpx;color:#8a2be2;font-weight:bold;'>注释</view>
-      </view>
-      <view wx:if="{{item.result}}" style='width:90%;height:auto;margin-left:40rpx;font-size:28rpx;' hover-class='bg_grey'>
-        {{item.result}}
-      </view>
-      <view wx:if="{{!item.result}}" style='width:90%;height:auto;margin-left:40rpx;font-size:28rpx;' hover-class='bg_grey'>
-        暂无
-      </view>
-      <view style='width:100%;height:100rpx;'>
-        <view style='display:flex;flex-direction:row;width:100rpx;height:auto;align-items:center;font-size:28rpx;color:#2fcabb;margin-left:80%;margin-top:30rpx;' bindtap='click' hover-class='bg_grey'>
-        <image src='../../images/shuangjiantou.png' style='width:30rpx;height:30rpx;'></image>
-        <view>收起</view>
-      </view>
-    </view>
-  </view>
-  <view wx:if="{{!item.isdown}}" style='margin-left:2.5%;width:95%;height:100rpx;background:#fff'>
-    <view style='display:flex;flex-direction:row;width:100rpx;height:auto;align-items:center;font-size:28rpx;color:#2fcabb;margin-left:80%;padding-top:30rpx;' hover-class='bg_grey'>
-      <image src='../../images/xiashuang.png' style='width:30rpx;height:30rpx;'></image>
-      <view bindtap='click'>展开</view>
-    </view>
-  </view>
-  </swiper-item>
-  </block>
-</swiper>
+    <block wx:for="{{info.test}}">
+  
+    </block>
   </view>
 </view>

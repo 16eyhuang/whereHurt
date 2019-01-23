@@ -36,7 +36,7 @@ Page({
     formdata.mobile=formdata.gender
     console.log(formdata)
     formdata.isData = 0
-    formdata.id = app.globalData.userid.id
+    formdata.id = app.globalData.userinfo.id
     var regAge = /^(?:[1-9][0-9]?|1[01][0-9]|120)$/;    //年龄在0-120之间
     var regHeight = /^(?:[1-9][0-9]?|[12][0-9][0-9])$/; //身高在0-300之间
     var regWeight = /^[0-9]{1,3}$/; //体重在0-999之间

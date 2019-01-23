@@ -4,28 +4,28 @@
 
 
 
-   <view class="table" style='margin-left:40rpx;'>
-        <view class="tr">
-            <view class="th">疾病编号</view>
-            <view class="th">疾病名称</view>
-        </view>
+  <view class="table" style='margin-left:40rpx;'>
+    <view class="tr">
+      <view class="th">疾病编号</view>
+      <view class="th">疾病名称</view>
+    </view>
     <view wx:for="{{info.test}}" class='tr'>
       <!--<view bindtap='toCheckReport' id="{{item.id}}" data-result="{{item.result}}" data-testid="{{item.testid}}" data-disease_name="{{item.disease_name}}" style='display:flex;'>-->
-        <view class="th" style='padding-left:20rpx; font-weight:bold;'>
-          {{item.testid}}
-        </view>
-        <view class="th" style='color:#2fcabb;' bindtap='toCheckReport' id="{{item.id}}" data-result="{{item.result}}" data-testid="{{item.testid}}" data-disease_name="{{item.disease_name}}">
-          {{item.disease_name}}
-        </view>
+      <view class="th" style='padding-left:20rpx; font-weight:bold;'>
+        {{item.testid}}
+      </view>
+      <view class="th" style='color:#2fcabb;' bindtap='toCheckReport' id="{{item.id}}" data-result="{{item.result}}" data-testid="{{item.testid}}" data-disease_name="{{item.disease_name}}">
+        {{item.disease_name}}
+      </view>
       <!--</view>-->
     </view>
-   
-   </view>
-   
-   
-   
-    <view style='display:flex; padding:20rpx;'>
+
+  </view>
+
+
+
+  <view style='display:flex; padding:20rpx;'>
     <button class='button11' bindtap='ReCheck'>重新检查</button>
     <button class='button11' bindtap='Back'>返回主页</button>
-    </view>
+  </view>
 </view>
