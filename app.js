@@ -18,7 +18,7 @@ App({
       //获取授权码code
       success: function (e) {
         //console.info("授权码code");//
-        //console.info(e.code);//
+        console.info(e.code);//
         //获取用户信息接口
         wx.request({
           url: "https://wx.med.stu.edu.cn/selftest/api.php?action=get_userinfo",

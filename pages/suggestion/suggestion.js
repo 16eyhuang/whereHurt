@@ -82,7 +82,7 @@ Page({
   },
   toFinalReport:function(){
     wx.navigateTo({
-      url: '/pages/FinalReport/FinalReport',
+      url: '/pages/member/history',
     })
     
   },

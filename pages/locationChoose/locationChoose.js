@@ -26,7 +26,7 @@ Page({
   onLoad: function () {
     var that = this
     that.setData({
-      'formdata.userid': app.globalData.userinfo.userid
+      'formdata.userid': app.globalData.userinfo.id
     })
     console.log(that.data.formdata.userid)
     try {

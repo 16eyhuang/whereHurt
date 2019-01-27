@@ -1,5 +1,5 @@
 // pages/sportsChoose/sportsChoose.js
-let app=getApp()
+var app=getApp()
 Page({
 
   /**
@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     let that=this
     that.setData({
-      'formdata.userid':app.globalData.userid
+      'formdata.userid': app.globalData.userinfo.id
     })
   },
 
